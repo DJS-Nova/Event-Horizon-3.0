@@ -18,7 +18,9 @@ export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
 
   return (
-    <div className="relative min-h-screen w-full bg-black">
+    <div className="relative min-h-screen w-full bg-transparent">
+      {/* Base black layer set to z-[-2] so it sits precisely behind the Starfield z-[-1] canvas */}
+      <div className="fixed inset-0 bg-black z-[-2] pointer-events-none" />
       {showIntro && (
         <Intro onComplete={() => setShowIntro(false)} />
       )}
@@ -28,14 +30,8 @@ export default function Home() {
       {/* </div> */}
 
       {/* 2. Hero Section - z-index 20 covers the timeline canvas beneath it while at the top of the page */}
-      <div className="bg-transparent min-h-screen w-full">
+      <div className="relative z-20 bg-transparent min-h-screen w-full">
         <Hero />
-        {/* Other sections can be added here later */}
-      </div>
-
-      {/* 3. Timeline Section - z-index 10. Its internal fixed canvas will wait under the hero section until scrolled. */}
-      <div className="relative z-10 w-full bg-black/0">
-        <EventHorizon />
       </div>
 
       {/* 4. Post-timeline Sections */}

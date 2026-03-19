@@ -325,54 +325,61 @@ export default function EventHorizonTimeline() {
     const [activeStage, setActiveStage] = useState(0);
 
     return (
-        <div className="relative w-full bg-black text-white selection:bg-cyan-500/30 font-sans">
-            
+        <div id="timeline" className="relative w-full bg-black text-white selection:bg-cyan-500/30 font-sans">
+
+
             {/* STICKY WRAPPER */}
             <div className="sticky top-0 left-0 w-full h-screen overflow-hidden z-0">
+                <h2 className="absolute top-6 left-1/2 -translate-x-1/2 z-30 
+               text-4xl md:text-6xl lg:text-7xl 
+               text-white uppercase tracking-[0.2em] 
+               font-black text-center pointer-events-none">
+                    Timeline
+                </h2>
                 {/* 2D HTML OVERLAY LAYER */}
                 <div className="absolute inset-0 z-20 pointer-events-none">
-                {TEXT_OVERLAYS.map((overlay, index) => {
-                    const isActive = activeStage === overlay.stage;
-                    return (
-                        <div
-                            key={index}
-                            className={`absolute transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                                }`}
-                            style={{
-                                top: overlay.top,
-                                left: (overlay as any).left,
-                                right: (overlay as any).right,
-                                bottom: (overlay as any).bottom,
-                                transform: (overlay as any).transform || 'none',
-                            }}
-                        >
-                            <div className="text-cyan-400 font-bold text-sm md:text-base tracking-widest uppercase drop-shadow-md font-extralight">
-                                {overlay.time}
+                    {TEXT_OVERLAYS.map((overlay, index) => {
+                        const isActive = activeStage === overlay.stage;
+                        return (
+                            <div
+                                key={index}
+                                className={`absolute transition-all duration-700 ease-in-out ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                                    }`}
+                                style={{
+                                    top: overlay.top,
+                                    left: (overlay as any).left,
+                                    right: (overlay as any).right,
+                                    bottom: (overlay as any).bottom,
+                                    transform: (overlay as any).transform || 'none',
+                                }}
+                            >
+                                <div className="text-cyan-400 font-bold text-sm md:text-base tracking-widest uppercase drop-shadow-md font-extralight">
+                                    {overlay.time}
+                                </div>
+                                {/* Example Tailwind Stroke: text-transparent bg-clip-text [-webkit-text-stroke:1px_white] */}
+                                <div className="text-white text-2xl font-extralight md:text-5xl drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+                                    {overlay.title}
+                                </div>
                             </div>
-                            {/* Example Tailwind Stroke: text-transparent bg-clip-text [-webkit-text-stroke:1px_white] */}
-                            <div className="text-white text-2xl font-extralight md:text-5xl drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-                                {overlay.title}
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+                        );
+                    })}
+                </div>
 
-            {/* 3D Canvas */}
-            <div className="absolute inset-0 z-10 w-full h-full">
-                <Canvas camera={{ position: [0, 80, 5], fov: 45 }}>
-                    <color attach="background" args={['#000000']} />
-                    <ambientLight intensity={0.6} />
-                    <directionalLight position={[20, 50, 20]} intensity={2} color="#ffffff" castShadow />
-                    <directionalLight position={[-20, -20, -20]} intensity={0.5} color="#4455aa" />
+                {/* 3D Canvas */}
+                <div className="absolute inset-0 z-10 w-full h-full">
+                    <Canvas camera={{ position: [0, 80, 5], fov: 45 }}>
+                        <color attach="background" args={['#000000']} />
+                        <ambientLight intensity={0.6} />
+                        <directionalLight position={[20, 50, 20]} intensity={2} color="#ffffff" castShadow />
+                        <directionalLight position={[-20, -20, -20]} intensity={0.5} color="#4455aa" />
 
-                    <Stars radius={150} depth={50} count={6000} factor={4} saturation={0} fade speed={0.2} />
-                    <React.Suspense fallback={null}>
-                        <Experience setActiveStage={setActiveStage} />
-                    </React.Suspense>
-                </Canvas>
+                        <Stars radius={150} depth={50} count={6000} factor={4} saturation={0} fade speed={0.2} />
+                        <React.Suspense fallback={null}>
+                            <Experience setActiveStage={setActiveStage} />
+                        </React.Suspense>
+                    </Canvas>
+                </div>
             </div>
-        </div>
 
             {/* SCROLL TRIGGER CONTAINER */}
             <div id="scroll-container" className="relative z-10 w-full -mt-[100vh]">
