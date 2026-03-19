@@ -9,8 +9,8 @@ import * as THREE from "three";
 // ─────────────────────────────
 // INTRO TIMING
 // ─────────────────────────────
-const TEXT_DURATION = 100
-const TEXT_GAP = 50
+const TEXT_DURATION = 500
+const TEXT_GAP = 250
 
 const CAMERA_SPEED = 0.40
 const FINAL_WARP_SPEED = 4

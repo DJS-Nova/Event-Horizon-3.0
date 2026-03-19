@@ -76,7 +76,7 @@ const Navbar = () => {
         <>
             {/* Desktop & Mobile Header Wrapper */}
             <header className={`fixed left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] sm:w-[90%] max-w-6xl ${isScrolled ? 'top-2 md:top-4' : 'top-4 md:top-8'}`}>
-                <nav className="flex items-center justify-between px-6 py-3 md:px-8 md:py-4 backdrop-blur-md bg-black/40 border border-white/10 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
+                <nav className="flex items-center justify-between px-6 py-2 md:px-8 md:py-3 backdrop-blur-md bg-black/40 border border-white/10 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
 
                     {/* Brand / Logo (Left) */}
                     <div className="text-white font-black tracking-[0.2em] uppercase text-sm md:text-base select-none">
