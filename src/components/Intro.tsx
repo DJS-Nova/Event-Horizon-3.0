@@ -173,7 +173,7 @@ export default function Intro({ onComplete }: { onComplete: () => void }) {
 
     return (
 
-        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center text-white text-center">
+        <div className="fixed inset-0 bg-black z-200 flex items-center justify-center text-white text-center">
 
             {textPhase === 1 && <p className="intro">We looked at the sky.</p>}
             {textPhase === 2 && <p className="intro">We asked questions.</p>}

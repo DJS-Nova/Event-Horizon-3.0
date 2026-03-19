@@ -8,6 +8,7 @@ const EventHorizon = dynamic(() => import('@/components/TimeLine'), { ssr: false
 
 const Intro = dynamic(() => import("@/components/Intro"), {
     ssr: false,
+    loading: () => <div className="fixed inset-0 bg-black z-200"></div>,
 });
 
 export default function Home() {

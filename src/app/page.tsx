@@ -12,6 +12,7 @@ const EventHorizon = dynamic(() => import('@/components/TimeLine'), { ssr: false
 
 const Intro = dynamic(() => import("@/components/Intro"), {
   ssr: false,
+  loading: () => <div className="fixed inset-0 bg-black z-200"></div>,
 });
 
 export default function Home() {
@@ -33,7 +34,10 @@ export default function Home() {
       <div className="relative z-20 bg-transparent min-h-screen w-full">
         <Hero />
       </div>
-
+      {/* 3. Timeline Section - z-index 10. Its internal fixed canvas will wait under the hero section until scrolled. */}
+      <div className="relative z-10 w-full bg-black/0">
+        <EventHorizon />
+      </div>
       {/* 4. Post-timeline Sections */}
       <div className="relative z-10 w-full bg-transparent flex flex-col items-center">
         <FAQ />
