@@ -26,6 +26,7 @@ export default function Home() {
             <Starfield />
             <MeteorShower />
             {/* </div> */}
+            <Navbar />
 
             {/* 2. Hero Section - z-index 20 covers the timeline canvas beneath it while at the top of the page */}
             <div className="relative z-20 bg-transparent min-h-screen w-full">
@@ -118,7 +119,23 @@ const Navbar = () => {
 const Hero = () => {
     return (
         <div className="relative w-full min-h-screen bg-transparent flex flex-col items-center justify-center pt-20 pb-10 px-4 z-10">
-            <Navbar />
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                <img
+                    src="/blackhole.png"
+                    alt="blackhole background"
+                    className="w-full h-full object-cover opacity-60"
+                    style={{
+                        animation: "wobble 20s ease-in-out infinite"
+                    }}
+                />
+
+                <style jsx global>{`
+    @keyframes wobble {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.05) rotate(0.5deg); }
+    }
+  `}</style>
+            </div>
 
             {/* Main Hero Content */}
             <div className="flex flex-col items-center text-center max-w-5xl relative z-10 w-full">

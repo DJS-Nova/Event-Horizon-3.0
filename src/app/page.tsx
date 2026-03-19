@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import PrizeDistribution from "@/components/PrizeDistribution";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
 const EventHorizon = dynamic(() => import('@/components/TimeLine'), { ssr: false });
 
 const Intro = dynamic(() => import("@/components/Intro"), {
@@ -29,6 +30,8 @@ export default function Home() {
       {/* <div className="fixed inset-0 z-0 pointer-events-none"> */}
       <Starfield />
       {/* </div> */}
+
+      <Navbar />
 
       {/* 2. Hero Section - z-index 20 covers the timeline canvas beneath it while at the top of the page */}
       <div className="relative z-20 bg-transparent min-h-screen w-full">
