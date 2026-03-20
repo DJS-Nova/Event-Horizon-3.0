@@ -9,7 +9,7 @@ const PrizeDistribution = () => {
                 Prize Distribution
             </h2>
             <div className="w-full max-w-5xl px-8 flex flex-col md:flex-row items-end justify-center gap-6">
-                
+
                 {/* 2nd Place */}
                 <div className="w-full md:w-1/3 flex flex-col items-center order-2 md:order-1 select-none">
                     <div className="glass-morphism w-full p-8 rounded-t-3xl border border-gray-400/30 text-center shadow-[0_0_30px_rgba(192,192,192,0.1)] h-64 flex flex-col justify-end relative hover:-translate-y-2 transition-transform duration-500">
@@ -18,10 +18,10 @@ const PrizeDistribution = () => {
                             <h3 className="text-3xl font-thin text-gray-300 mb-2 tracking-widest">2nd Place</h3>
                             <p className="text-gray-500 font-thin uppercase tracking-widest text-sm">Runner up</p>
                         </div>
-                        <div className="text-4xl font-thin text-white mt-6">$1,500</div>
+                        <div className="text-4xl font-thin text-white mt-6">₹xxxxx</div>
                     </div>
                 </div>
-                
+
                 {/* 1st Place */}
                 <div className="w-full md:w-1/3 flex flex-col items-center order-1 md:order-2 z-10 select-none">
                     <div className="glass-morphism w-full p-8 rounded-t-3xl border border-yellow-500/50 text-center shadow-[0_0_50px_rgba(255,215,0,0.15)] h-80 flex flex-col justify-end relative bg-yellow-500/5 hover:-translate-y-4 transition-transform duration-500">
@@ -30,7 +30,7 @@ const PrizeDistribution = () => {
                             <h3 className="text-4xl font-thin text-yellow-400 mb-2 tracking-widest">1st Place</h3>
                             <p className="text-yellow-600/70 font-thin uppercase tracking-widest text-sm">Grand Prize</p>
                         </div>
-                        <div className="text-6xl font-thin text-white mt-8">$3,000</div>
+                        <div className="text-6xl font-thin text-white mt-8">₹xxxxx</div>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@ const PrizeDistribution = () => {
                             <h3 className="text-2xl font-thin text-orange-400 mb-2 tracking-widest">3rd Place</h3>
                             <p className="text-orange-900/80 font-thin uppercase tracking-widest text-sm">Second Runner up</p>
                         </div>
-                        <div className="text-3xl font-thin text-white mt-4">$500</div>
+                        <div className="text-3xl font-thin text-white mt-4">₹xxxxx</div>
                     </div>
                 </div>
 

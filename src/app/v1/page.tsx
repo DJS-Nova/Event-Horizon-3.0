@@ -264,7 +264,7 @@ const PrizeDistribution = () => {
                     </div>
                     <h3 className="text-lg font-medium text-neutral-300 uppercase tracking-widest mb-1">Orbit Tier</h3>
                     <p className="text-xs text-neutral-500 uppercase tracking-[0.2em] mb-6">Runner Up</p>
-                    <div className="text-4xl font-black text-white">$1,500</div>
+                    <div className="text-4xl font-black text-white">₹xxxx</div>
                 </div>
 
                 {/* 1st Place - Emphasized */}
@@ -276,7 +276,7 @@ const PrizeDistribution = () => {
                     </div>
                     <h3 className="text-xl font-bold text-white uppercase tracking-widest mb-1 relative">Supernova</h3>
                     <p className="text-xs text-neutral-400 uppercase tracking-[0.2em] mb-8 relative">Grand Prize</p>
-                    <div className="text-6xl font-black text-white relative drop-shadow-md">$3,000</div>
+                    <div className="text-6xl font-black text-white relative drop-shadow-md">₹xxxxx</div>
                 </div>
 
                 {/* 3rd Place */}
@@ -286,7 +286,7 @@ const PrizeDistribution = () => {
                     </div>
                     <h3 className="text-lg font-medium text-neutral-400 uppercase tracking-widest mb-1">Rover Tier</h3>
                     <p className="text-xs text-neutral-600 uppercase tracking-[0.2em] mb-6">Second Runner Up</p>
-                    <div className="text-4xl font-black text-neutral-300">$500</div>
+                    <div className="text-4xl font-black text-neutral-300">₹xxxxx</div>
                 </div>
 
             </div>

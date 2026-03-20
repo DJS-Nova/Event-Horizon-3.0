@@ -280,7 +280,7 @@ const PrizeDistribution = () => {
                             <p className="text-neutral-500 font-medium uppercase tracking-[0.3em] text-xs">Orbit</p>
                         </div>
                         <div className="text-5xl font-black text-white mt-6">
-                            $1,500
+                            ₹xxxxx
                         </div>
                     </div>
                 </div>
@@ -298,7 +298,7 @@ const PrizeDistribution = () => {
                             <p className="text-neutral-400 font-medium uppercase tracking-[0.3em] text-sm">Supernova</p>
                         </div>
                         <div className="text-6xl font-black text-white mt-8">
-                            $3,000
+                            ₹xxxxx
                         </div>
                     </div>
                 </div>
@@ -314,7 +314,7 @@ const PrizeDistribution = () => {
                             <p className="text-neutral-600 font-medium uppercase tracking-[0.3em] text-xs">Rover</p>
                         </div>
                         <div className="text-4xl font-black text-neutral-300 mt-6">
-                            $500
+                            ₹xxxxx
                         </div>
                     </div>
                 </div>
