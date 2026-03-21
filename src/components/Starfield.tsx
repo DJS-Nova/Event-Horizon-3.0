@@ -47,7 +47,7 @@ export default function Starfield() {
         };
 
         const resizeCanvas = () => {
-            const dpr = window.devicePixelRatio || 1;
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
             canvas.width = window.innerWidth * dpr;
             canvas.height = window.innerHeight * dpr;

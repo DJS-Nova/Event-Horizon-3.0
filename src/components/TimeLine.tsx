@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useLayoutEffect, useMemo, useState } from 'react';
+import React, { useRef, useLayoutEffect, useMemo, useState, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useTexture, useGLTF, Stars, Line } from '@react-three/drei';
 import * as THREE from 'three';
@@ -330,12 +330,24 @@ export default function EventHorizonTimeline() {
 
             {/* STICKY WRAPPER */}
             <div className="sticky top-0 left-0 w-full h-screen overflow-hidden z-0">
-                <h2 className="absolute top-6 left-1/2 -translate-x-1/2 z-30 
-               text-4xl md:text-6xl lg:text-7xl 
-               text-white uppercase tracking-[0.2em] 
-               font-black text-center pointer-events-none">
-                    Timeline
-                </h2>
+                <div className="relative z-30 flex flex-col items-center mb-16 lg:mb-24 w-full px-4 pt-5">
+                    <p className="text-white/40 uppercase tracking-[0.6em] md:tracking-[0.8em] text-[10px] md:text-xs font-thin mb-4">
+                        Mission Control
+                    </p>
+
+                    <h2
+                        className="text-5xl md:text-7xl lg:text-8xl font-thin uppercase tracking-[0.15em] text-center"
+                        style={{
+                            background:
+                                "linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.3) 100%)",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            transform: "scaleY(1.15)",
+                        }}
+                    >
+                        TIMELINE
+                    </h2>
+                </div>
                 {/* 2D HTML OVERLAY LAYER */}
                 <div className="absolute inset-0 z-20 pointer-events-none">
                     {TEXT_OVERLAYS.map((overlay, index) => {
@@ -367,7 +379,12 @@ export default function EventHorizonTimeline() {
 
                 {/* 3D Canvas */}
                 <div className="absolute inset-0 z-10 w-full h-full">
-                    <Canvas camera={{ position: [0, 80, 5], fov: 45 }}>
+                    <Canvas 
+                        camera={{ position: [0, 80, 5], fov: 45 }}
+                        gl={{ antialias: false, powerPreference: "high-performance" }}
+                        dpr={[1, 1.5]}
+                        performance={{ min: 0.5 }}
+                    >
                         <color attach="background" args={['#000000']} />
                         <ambientLight intensity={0.6} />
                         <directionalLight position={[20, 50, 20]} intensity={2} color="#ffffff" castShadow />

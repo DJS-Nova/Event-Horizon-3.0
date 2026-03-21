@@ -52,7 +52,7 @@ const Contact = () => {
                                 height={30}
                                 className="w-6 h-6 object-contain"
                             />
-                            <span className="hidden md:inline">{link}</span>
+                            <span>{link}</span>
 
                             <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
                         </a>

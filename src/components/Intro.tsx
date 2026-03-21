@@ -113,12 +113,13 @@ function CameraAnimation({ done }: { done: () => void }) {
         }
         else {
 
-            cam.current.position.addScaledVector(forward, delta * FINAL_WARP_SPEED)
+            cam.current.position.addScaledVector(forward, delta * 12)
 
-            cam.current.fov += delta * 10
+            cam.current.fov += delta * 25
             cam.current.updateProjectionMatrix()
 
-            if (cam.current.position.length() < 1) {
+            // Pass through the exact center and go 5 units beyond
+            if (cam.current.position.dot(forward) > 5) {
                 done()
             }
 
@@ -145,10 +146,11 @@ export default function Intro({ onComplete }: { onComplete: () => void }) {
 
     const [textPhase, setTextPhase] = useState(0)
     const [showGalaxy, setShowGalaxy] = useState(false)
+    const [isFadingOut, setIsFadingOut] = useState(false)
 
     useEffect(() => {
 
-        const t1 = setTimeout(() => setTextPhase(1), 500)
+        const t1 = setTimeout(() => setTextPhase(1), 100)
 
         const t2 = setTimeout(() => setTextPhase(2), TEXT_DURATION + TEXT_GAP)
 
@@ -171,39 +173,48 @@ export default function Intro({ onComplete }: { onComplete: () => void }) {
 
     }, [])
 
+    const handleComplete = () => {
+        if (!isFadingOut) {
+            setIsFadingOut(true)
+            setTimeout(() => {
+                onComplete()
+            }, 1000)
+        }
+    }
+
     return (
 
-        <div className="fixed inset-0 bg-black z-200 flex items-center justify-center text-white text-center">
+        <div className={`fixed inset-0 bg-black z-200 flex items-center justify-center text-white text-center transition-opacity duration-1000 ease-in-out ${isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
 
-            {textPhase === 1 && <p className="intro">We looked at the sky.</p>}
-            {textPhase === 2 && <p className="intro">We asked questions.</p>}
-            {textPhase === 3 && <p className="intro">We reached the stars.</p>}
-            {textPhase === 4 && <h1 className="title">Evolution of Space</h1>}
+            {/* Absolute positioning prevents text layout from shifting when Canvas mounts */}
+            <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                {textPhase === 1 && <p className="intro">We looked at the sky.</p>}
+                {textPhase === 2 && <p className="intro">We asked questions.</p>}
+                {textPhase === 3 && <p className="intro">We reached the stars.</p>}
+            </div>
 
-            {showGalaxy && (
-
+            {/* Seamlessly pre-load Canvas in background to stop WebGL lag spikes. */}
+            <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${showGalaxy ? 'opacity-100' : 'opacity-0'}`}>
                 <Canvas
                     camera={{ position: [0, 0, 40], fov: 45 }}
-                    gl={{ antialias: true }}
+                    gl={{ antialias: false, powerPreference: "high-performance" }}
+                    dpr={[1, 1.5]}
+                    performance={{ min: 0.5 }}
                 >
-
                     <color attach="background" args={["black"]} />
 
                     <Suspense fallback={null}>
 
-                        <CameraAnimation done={onComplete} />
+                        {/* Start animation ONLY when the text finishes */}
+                        {showGalaxy && <CameraAnimation done={handleComplete} />}
 
                         <ambientLight intensity={1.5} />
-
                         <Environment preset="night" />
-
                         <Galaxy />
 
                     </Suspense>
-
                 </Canvas>
-
-            )}
+            </div>
 
             <style jsx>{`
 
