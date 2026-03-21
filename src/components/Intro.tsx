@@ -156,19 +156,16 @@ export default function Intro({ onComplete }: { onComplete: () => void }) {
 
         const t3 = setTimeout(() => setTextPhase(3), (TEXT_DURATION + TEXT_GAP) * 2)
 
-        const t4 = setTimeout(() => setTextPhase(4), (TEXT_DURATION + TEXT_GAP) * 3)
-
-        const t5 = setTimeout(() => {
+        const t4 = setTimeout(() => {
             setTextPhase(0)
             setShowGalaxy(true)
-        }, (TEXT_DURATION + TEXT_GAP) * 4)
+        }, (TEXT_DURATION + TEXT_GAP) * 3)
 
         return () => {
             clearTimeout(t1)
             clearTimeout(t2)
             clearTimeout(t3)
             clearTimeout(t4)
-            clearTimeout(t5)
         }
 
     }, [])
