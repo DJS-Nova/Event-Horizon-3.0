@@ -42,20 +42,24 @@ const MARS_POS = new THREE.Vector3(35, 0, -25);
 const JWST_POS = new THREE.Vector3(60, 10, 20);
 const CHANDRAYAAN_POS = new THREE.Vector3(0, SCALES.moon + -0.03, 0);
 
-// ==========================================
-// 📝 2D TEXT OVERLAYS (Adjust top/left/right/bottom to position on screen)
-// ==========================================
-const TEXT_OVERLAYS = [
-    { stage: 0, time: "8:00 PM", title: "Inauguration Ceremony", top: "40%", left: "55%", fontWeight: "100" },
-    { stage: 1, time: "9:00 PM", title: "Speaker Session", top: "40%", right: "15%", fontWeight: "100" },
-    { stage: 2, time: "10:00 PM", title: "Round 1", top: "30%", left: "15%", fontWeight: "100" },
-    { stage: 3, time: "11:30 PM", title: "Round 2", top: "60%", right: "10%", fontWeight: "100" },
-    { stage: 4, time: "1:00 AM", title: "Round 3", top: "25%", left: "10%", fontWeight: "100" },
-    { stage: 5, time: "3:00 AM", title: "Round 4", top: "45%", right: "20%", fontWeight: "100" },
-    { stage: 6, time: "5:00 AM", title: "Prize Distribution", top: "70%", left: "15%" },
-    { stage: 7, time: "6:00 AM", title: "Closing Ceremony", top: "15%", left: "50%", transform: "translateX(-50%)" }, // Centered example
-];
 
+const TEXT_OVERLAYS = [
+    { stage: 0, time: "10:30 AM", title: "Event Start", top: "40%", left: "55%", fontWeight: "100" },
+
+    { stage: 1, time: "10:30 AM - 12:00 PM", title: "Quiz", top: "30%", left: "15%", fontWeight: "100" },
+
+    { stage: 2, time: "12:00 PM - 12:45 PM", title: "Inauguration Ceremony", top: "40%", right: "15%", fontWeight: "100" },
+
+    { stage: 3, time: "12:45 PM - 2:00 PM", title: "Speaker Session", top: "25%", left: "10%", fontWeight: "100" },
+
+    { stage: 4, time: "2:30 PM - 3:30 PM", title: "Group Quiz", top: "60%", right: "10%", fontWeight: "100" },
+
+    { stage: 5, time: "3:30 PM - 4:15 PM", title: "Cosmic Survival", top: "25%", left: "10%", fontWeight: "100" }, // slightly shorter
+
+    { stage: 6, time: "4:15 PM - 5:30 PM", title: "Treasure Hunt", top: "45%", right: "20%", fontWeight: "100" }, // longer emphasis
+
+    { stage: 7, time: "6:00 PM", title: "Prize Distribution", top: "70%", left: "15%" },
+];
 
 // --- MAIN EXPERIENCE COMPONENT (3D Only) ---
 const Experience = ({ setActiveStage }: { setActiveStage: (stage: number) => void }) => {
@@ -325,7 +329,7 @@ export default function EventHorizonTimeline() {
     const [activeStage, setActiveStage] = useState(0);
 
     return (
-        <div id="timeline" className="relative w-full bg-black text-white selection:bg-cyan-500/30 font-sans">
+        <div id="timeline" className="scroll-mt-32 relative w-full bg-black text-white selection:bg-cyan-500/30 font-sans">
 
 
             {/* STICKY WRAPPER */}
@@ -379,7 +383,7 @@ export default function EventHorizonTimeline() {
 
                 {/* 3D Canvas */}
                 <div className="absolute inset-0 z-10 w-full h-full">
-                    <Canvas 
+                    <Canvas
                         camera={{ position: [0, 80, 5], fov: 45 }}
                         gl={{ antialias: false, powerPreference: "high-performance" }}
                         dpr={[1, 1.5]}

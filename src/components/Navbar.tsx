@@ -4,16 +4,31 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navLinks = ['Home', 'Timeline', 'FAQ', 'Prizes', 'Contact'];
 
-    // Optional: Adds a subtle shrink effect when the user scrolls down
+    // Hide navbar on scroll down, show on scroll up
     useEffect(() => {
+        let lastScrollY = window.scrollY;
+
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down
+                setIsVisible(false);
+            } else {
+                // Scrolling up
+                setIsVisible(true);
+            }
+
+            lastScrollY = currentScrollY;
+            setIsScrolled(currentScrollY > 50);
         };
-        window.addEventListener('scroll', handleScroll);
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -29,7 +44,7 @@ const Navbar = () => {
     return (
         <>
             {/* Desktop & Mobile Header Wrapper */}
-            <header className={`fixed left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] sm:w-[90%] max-w-6xl ${isScrolled ? 'top-2 md:top-4' : 'top-4 md:top-8'}`}>
+            <header className={`fixed left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] sm:w-[90%] max-w-6xl ${isVisible ? (isScrolled ? 'top-2 md:top-4' : 'top-4 md:top-8') : '-top-32'}`}>
                 <nav className="flex items-center justify-between px-6 py-2 md:px-8 md:py-3 backdrop-blur-md bg-black/40 border border-white/10 rounded-full shadow-[0_4px_30px_rgba(0,0,0,0.3)]">
 
                     {/* Brand / Logo (Left) */}
@@ -53,9 +68,9 @@ const Navbar = () => {
 
                     {/* Desktop Register Button (Right) */}
                     <div className="hidden md:block">
-                        <button className="px-6 py-2.5 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-full hover:bg-neutral-300 hover:scale-105 transition-all duration-300">
+                        <a href='https://unstop.com/p/event-horizon-30-djs-nova-the-astronomy-club-1664298' target='_blank' rel='noopener noreferrer' className="px-6 py-2.5 bg-white text-black text-xs font-bold uppercase tracking-widest rounded-full hover:bg-neutral-300 hover:scale-105 transition-all duration-300">
                             Register Now
-                        </button>
+                        </a>
                     </div>
 
                     {/* Mobile Menu Toggle (Hamburger Icon) */}
@@ -90,11 +105,11 @@ const Navbar = () => {
                         </a>
                     ))}
 
-                    <button
+                    <a href='https://unstop.com/p/event-horizon-30-djs-nova-the-astronomy-club-1664298' target='_blank' rel='noopener noreferrer'
                         className={`mt-8 w-full max-w-[250px] px-8 py-4 bg-white text-black text-sm font-bold uppercase tracking-widest rounded-full hover:bg-neutral-200 transition-all duration-500 delay-300 ${mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                     >
                         Register Now
-                    </button>
+                    </a >
                 </div>
             </div>
         </>

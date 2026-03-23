@@ -132,7 +132,7 @@ const FAQ = () => {
         <section
             id="faq"
             ref={sectionRef}
-            className="w-full py-4 md:py-40 flex flex-col items-center justify-center bg-transparent text-white relative z-30 overflow-hidden"
+            className="scroll-mt-32 w-full py-4 md:py-40 flex flex-col items-center justify-center bg-transparent text-white relative z-30 overflow-hidden"
         >
             <style>{customStyles}</style>
 

@@ -39,14 +39,14 @@ drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]
 
         {/* Tagline */}
         <p className="text-white/60 text-sm md:text-lg tracking-[0.5em] uppercase font-light mb-12 animate-fade-in-up">
-          Beyond the singularity • March 2026
+          Beyond the singularity • 30 March 2026
         </p>
 
         {/* Call to Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 items-center">
-          <button className="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-full hover:bg-transparent hover:text-white border-2 border-white transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+          <a href='https://unstop.com/p/event-horizon-30-djs-nova-the-astronomy-club-1664298' target='_blank' rel='noopener noreferrer' className="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest rounded-full hover:bg-transparent hover:text-white border-2 border-white transition-all duration-500 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
             Register Now
-          </button>
+          </a >
           <a href="#timeline" className="px-10 py-4 glass-morphism text-white font-bold uppercase tracking-widest rounded-full border-2 border-white/10 hover:border-white/40 transition-all duration-500">
             View Schedule
           </a>

@@ -5,7 +5,7 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <footer id="contact" className="w-full bg-black/50 backdrop-blur-xl border-t border-white/10 text-white mt-20 relative z-30 overflow-hidden">
+        <footer id="contact" className="scroll-mt-32 w-full bg-black/50 backdrop-blur-xl border-t border-white/10 text-white mt-20 relative z-30 overflow-hidden">
 
             {/* ===== TOP SECTION ===== */}
             <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">

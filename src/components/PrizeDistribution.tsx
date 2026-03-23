@@ -749,7 +749,7 @@ const AstralPortal = ({ title, subtitle, amount, color, delay, isVisible, isGran
                         ${isVisible ? 'opacity-100 blur-none' : 'opacity-0 blur-md'}`}
                         style={{ transitionDelay: `${delay + 600}ms` }}
                     >
-                        ₹xxxxx
+                        {amount}
                     </div>
                 </div>
             </div>
@@ -821,7 +821,7 @@ const PrizeDistribution: React.FC = () => {
         <section
             id="prizes"
             ref={sectionRef}
-            className="w-full py-24 md:py-40 min-h-screen flex flex-col items-center justify-center text-white relative z-30 overflow-hidden bg-transparent"
+            className="scroll-mt-32 w-full py-24 md:py-40 min-h-screen flex flex-col items-center justify-center text-white relative z-30 overflow-hidden bg-transparent"
         >
             <style>{customStyles}</style>
 
@@ -831,7 +831,7 @@ const PrizeDistribution: React.FC = () => {
             {/* Cinematic Header */}
             <div className="flex flex-col items-center mb-16 lg:mb-24 z-10">
                 <p className={`text-white/40 uppercase tracking-[0.6em] md:tracking-[0.8em] text-[10px] md:text-xs font-thin mb-6 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-                    An Event By DJS Nova
+                    Mission Bounties
                 </p>
                 <h2 className={`text-5xl md:text-8xl lg:text-9xl font-thin uppercase tracking-[0.15em] text-center transition-all duration-[1500ms] transform 
                     ${isVisible ? 'opacity-100 translate-y-0 filter-none' : 'opacity-0 -translate-y-12 blur-sm'}`}
@@ -850,21 +850,21 @@ const PrizeDistribution: React.FC = () => {
 
                 {/* 2ND PLACE - Order 2 on mobile, Order 1 on Desktop (Left) */}
                 <AstralPortal
-                    title="2nd Place" subtitle="Orbital Velocity" amount="₹xxxxx" color={colorTeal}
+                    title="2nd Place" subtitle="Orbital Velocity" amount="₹4,500" color={colorTeal}
                     delay={400} isVisible={isVisible} constellationData={csvData} constellationName="Cygnus"
                     positionClasses="z-20 order-2 lg:order-1 mt-8 lg:mt-32"
                 />
 
                 {/* 1ST PLACE - Order 1 on mobile (Top), Order 2 on Desktop (Center) */}
                 <AstralPortal
-                    title="1st Place" subtitle="Event Horizon" amount="₹xxxxx" color={colorCream}
+                    title="1st Place" subtitle="Event Horizon" amount="₹7,500" color={colorCream}
                     delay={100} isVisible={isVisible} isGrandPrize={true} constellationData={csvData} constellationName="Scorpius"
                     positionClasses="z-30 order-1 lg:order-2 mx-0 lg:-mx-8"
                 />
 
                 {/* 3RD PLACE - Order 3 on mobile (Bottom), Order 3 on Desktop (Right) */}
                 <AstralPortal
-                    title="3rd Place" subtitle="System Alignment" amount="₹xxxxx" color={colorSlate}
+                    title="3rd Place" subtitle="System Alignment" amount="₹3,000" color={colorSlate}
                     delay={700} isVisible={isVisible} constellationData={csvData} constellationName="Cancer"
                     positionClasses="z-10 order-3 lg:order-3 mt-8 lg:mt-32"
                 />
