@@ -93,10 +93,46 @@ const customStyles = `
 
 // --- 2. Enhanced FAQ Data ---
 const faqs = [
-    { id: "SYS.REQ.01", question: "What is Event Horizon 3.0?", answer: "Event Horizon 3.0 is a premier 24-hour hackathon bringing together the brightest minds to solve the most pressing challenges in space tech and beyond." },
-    { id: "PRT.ELG.02", question: "Who can participate?", answer: "Anyone with a passion for coding, design, or problem-solving. No prior experience is required! We welcome all skill levels to join the mission." },
-    { id: "FEE.STS.03", question: "Is there a registration fee?", answer: "No, participation in Event Horizon 3.0 is completely free for all accepted attendees. Your only investment is your time and creativity." },
-    { id: "TM.FMT.04", question: "How large can a team be?", answer: "Teams can consist of 1 to 4 members. You can form teams before the event or find teammates during the orbital teambuilding session." }
+    {
+        id: "EVT.INFO.01",
+        question: "What is Event Horizon 3.0?",
+        answer: "Event Horizon 3.0 is the annual flagship astronomy quiz competition organized by DJS Nova, the Astronomy and Astrophysics Club of SVKM’s Dwarkadas J. Sanghvi College of Engineering. The event challenges participants with questions from astronomy, astrophysics, space exploration, and space technology, with this year’s theme being 'Evolution of Space Technology'."
+    },
+    {
+        id: "PRT.ELG.02",
+        question: "Who can participate?",
+        answer: "Any college student from any branch currently enrolled in a college or university can participate."
+    },
+    {
+        id: "FEE.STS.03",
+        question: "Is there a registration fee?",
+        answer: "No, participation is completely free."
+    },
+    {
+        id: "FMT.TYPE.04",
+        question: "Is the event individual or team-based?",
+        answer: "The quiz is an individual participation event."
+    },
+    {
+        id: "EVT.DET.05",
+        question: "When and where will the event take place?",
+        answer: "Event Horizon 3.0 will be held offline on 30 March 2026 at SVKM’s Dwarkadas J. Sanghvi College of Engineering, Vile Parle, Mumbai."
+    },
+    {
+        id: "TOP.CVR.06",
+        question: "What topics will the quiz cover?",
+        answer: "Questions may cover areas such as astronomy, astrophysics, space missions, cosmology, space technology, the history of space exploration, and recent discoveries in space science."
+    },
+    {
+        id: "PRZ.DET.07",
+        question: "What are the prizes for the competition?",
+        answer: "The winner and runner-up will receive cash prizes along with certificates, and participation certificates will be provided to all registered participants who attend the event."
+    },
+    {
+        id: "UPD.SRC.08",
+        question: "Where can I get updates about the event?",
+        answer: "All updates, announcements, and additional details about the quiz format will be shared on DJS Nova’s official Instagram page."
+    }
 ];
 
 // --- 3. Main Component ---
