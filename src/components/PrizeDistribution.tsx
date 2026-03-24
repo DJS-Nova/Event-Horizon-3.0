@@ -850,7 +850,7 @@ const PrizeDistribution: React.FC = () => {
 
                 {/* 2ND PLACE - Order 2 on mobile, Order 1 on Desktop (Left) */}
                 <AstralPortal
-                    title="2nd Place" subtitle="Orbital Velocity" amount="₹4,500" color={colorTeal}
+                    title="2nd Place" subtitle="Escape Velocity" amount="₹4,500" color={colorTeal}
                     delay={400} isVisible={isVisible} constellationData={csvData} constellationName="Cygnus"
                     positionClasses="z-20 order-2 lg:order-1 mt-8 lg:mt-32"
                 />
@@ -864,7 +864,7 @@ const PrizeDistribution: React.FC = () => {
 
                 {/* 3RD PLACE - Order 3 on mobile (Bottom), Order 3 on Desktop (Right) */}
                 <AstralPortal
-                    title="3rd Place" subtitle="System Alignment" amount="₹3,000" color={colorSlate}
+                    title="3rd Place" subtitle="Stable Orbit" amount="₹3,000" color={colorSlate}
                     delay={700} isVisible={isVisible} constellationData={csvData} constellationName="Cancer"
                     positionClasses="z-10 order-3 lg:order-3 mt-8 lg:mt-32"
                 />
