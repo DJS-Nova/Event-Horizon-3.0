@@ -16,7 +16,7 @@ const Contact = () => {
                         Event Horizon <span className="text-neutral-500">3.0</span>
                     </h2>
                     <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-sm">
-                        Pioneering the future of technology through collaborative problem solving and cosmic innovation. Build the future, line by line.
+                        Exploring the cosmos through curiosity, knowledge, and the evolution of space technology.
                     </p>
                 </div>
 
@@ -32,27 +32,33 @@ const Contact = () => {
 
                     <a href="tel:+919372727422" className="hover:text-white transition flex items-center gap-3">
                         <Image src="/icons/phone.png" alt="Phone" width={20} height={20} className="w-5 h-5 opacity-70" />
-                        +91 9372727422
+                        +91  7977127291
                     </a>
                 </div>
 
                 {/* Social */}
                 <div className="flex flex-col md:items-end items-center gap-4 text-sm uppercase tracking-widest font-medium">
                     <h2>Social Media</h2>
-                    {['X', 'Instagram', 'LinkedIn'].map((link) => (
+                    {[
+                        { name: 'X', url: 'https://x.com/djsnova04' },
+                        { name: 'Instagram', url: 'https://www.instagram.com/djs.nova/' },
+                        { name: 'LinkedIn', url: 'https://www.linkedin.com/company/djs-nova' }
+                    ].map((link) => (
                         <a
-                            key={link}
-                            href="#"
+                            key={link.name}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center gap-3 text-neutral-400 hover:text-white transition relative group"
                         >
                             <Image
-                                src={`/icons/${link}.png`}
-                                alt={link}
+                                src={`/icons/${link.name}.png`}
+                                alt={link.name}
                                 width={30}
                                 height={30}
                                 className="w-6 h-6 object-contain"
                             />
-                            <span>{link}</span>
+                            <span>{link.name}</span>
 
                             <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
                         </a>
