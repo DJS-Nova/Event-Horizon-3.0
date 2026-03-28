@@ -43,22 +43,39 @@ const JWST_POS = new THREE.Vector3(60, 10, 20);
 const CHANDRAYAAN_POS = new THREE.Vector3(0, SCALES.moon + -0.03, 0);
 
 
+// const TEXT_OVERLAYS = [
+//     { stage: 0, time: "10:30 AM", title: "Event Start", top: "40%", left: "55%", fontWeight: "100" },
+
+//     { stage: 1, time: "10:30 AM - 12:00 PM", title: "Quiz", top: "30%", left: "15%", fontWeight: "100" },
+
+//     { stage: 2, time: "12:00 PM - 12:45 PM", title: "Inauguration Ceremony", top: "40%", right: "15%", fontWeight: "100" },
+
+//     { stage: 3, time: "12:45 PM - 2:00 PM", title: "Speaker Session", top: "25%", left: "10%", fontWeight: "100" },
+
+//     { stage: 4, time: "2:30 PM - 3:30 PM", title: "Group Quiz", top: "60%", right: "10%", fontWeight: "100" },
+
+//     { stage: 5, time: "3:30 PM - 4:15 PM", title: "Cosmic Survival", top: "25%", left: "10%", fontWeight: "100" }, // slightly shorter
+
+//     { stage: 6, time: "4:15 PM - 5:30 PM", title: "Treasure Hunt", top: "45%", right: "20%", fontWeight: "100" }, // longer emphasis
+
+//     { stage: 7, time: "6:00 PM", title: "Prize Distribution", top: "70%", left: "15%" },
+// ];
+
+
 const TEXT_OVERLAYS = [
-    { stage: 0, time: "10:30 AM", title: "Event Start", top: "40%", left: "55%", fontWeight: "100" },
+    { stage: 0, time: "10:30 AM", title: "Reporting", top: "40%", left: "55%", fontWeight: "100" },
 
-    { stage: 1, time: "10:30 AM - 12:00 PM", title: "Quiz", top: "30%", left: "15%", fontWeight: "100" },
+    { stage: 1, time: "11:00 AM - 12:00 PM", title: "Round 1: OMR Quiz", top: "30%", left: "15%", fontWeight: "100" },
 
-    { stage: 2, time: "12:00 PM - 12:45 PM", title: "Inauguration Ceremony", top: "40%", right: "15%", fontWeight: "100" },
+    { stage: 2, time: "12:00 PM - 1:30 PM", title: "Round 2: Team Quiz", top: "40%", right: "15%", fontWeight: "100" },
 
-    { stage: 3, time: "12:45 PM - 2:00 PM", title: "Speaker Session", top: "25%", left: "10%", fontWeight: "100" },
+    { stage: 3, time: "1:30 PM - 2:00 PM", title: "Guest Talk: Deepak Singh (IITB)", top: "25%", left: "10%", fontWeight: "100" },
 
-    { stage: 4, time: "2:30 PM - 3:30 PM", title: "Group Quiz", top: "60%", right: "10%", fontWeight: "100" },
+    { stage: 4, time: "2:00 PM - 4:00 PM", title: "Round 3: Planet Survival", top: "60%", right: "10%", fontWeight: "100" },
 
-    { stage: 5, time: "3:30 PM - 4:15 PM", title: "Cosmic Survival", top: "25%", left: "10%", fontWeight: "100" }, // slightly shorter
+    { stage: 5, time: "5:00 PM - 6:00 PM", title: "Round 4: Treasure Hunt", top: "25%", left: "10%", fontWeight: "100" },
 
-    { stage: 6, time: "4:15 PM - 5:30 PM", title: "Treasure Hunt", top: "45%", right: "20%", fontWeight: "100" }, // longer emphasis
-
-    { stage: 7, time: "6:00 PM", title: "Prize Distribution", top: "70%", left: "15%" },
+    { stage: 6, time: "6:00 PM", title: "Final Results & Prize Distribution", top: "70%", left: "15%" },
 ];
 
 // --- MAIN EXPERIENCE COMPONENT (3D Only) ---
